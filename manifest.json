@@ -1,17 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "Markdown Rich Review for GitHub Pull Requests",
-  "version": "2.1.0",
-  "description": "Enhances GitHub PR diff view for Markdown files with rich preview, line-level comment indicators, and click-to-source navigation.",
+  "name": "Marky Mouse Clubhouse",
+  "version": "0.1.0",
+  "description": "Google-Docs-style Markdown review for GitHub Pull Requests: one continuous rendered document, margin comments, suggestions, replies, and resolve — no tokens required.",
   "permissions": [],
   "content_scripts": [
     {
       "matches": ["https://github.com/*"],
       "js": [
-        "utils/domHelpers.js",
-        "content-script.js"
+        "vendor/markdown-it.min.js",
+        "src/util.js",
+        "src/github-adapter.js",
+        "src/renderer.js",
+        "src/review-panel.js",
+        "src/main.js"
       ],
-      "css": ["styles/reviewPane.css"],
+      "css": ["styles/panel.css"],
       "run_at": "document_idle"
     }
   ],
@@ -26,12 +30,6 @@
       "32": "icons/icon32.png",
       "64": "icons/icon64.png"
     },
-    "default_title": "Markdown Rich Review for GitHub Pull Requests"
-  },
-  "web_accessible_resources": [
-    {
-      "resources": ["icons/*"],
-      "matches": ["https://github.com/*"]
-    }
-  ]
+    "default_title": "MD Docs Review for GitHub Pull Requests"
+  }
 }

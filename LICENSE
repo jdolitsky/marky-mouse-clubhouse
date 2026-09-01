@@ -1,6 +1,10 @@
 MIT License
 
-Copyright (c) 2026 Ahmed Sabbour
+Copyright (c) 2026 Josh Dolitsky
+
+Largely inspired by and building on ideas from "Markdown Rich Review for
+GitHub Pull Requests", Copyright (c) 2026 Ahmed Sabbour, also released
+under the MIT License.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

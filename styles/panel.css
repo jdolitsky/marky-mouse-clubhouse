@@ -1,0 +1,623 @@
+/* ============================================================
+   MD Docs Review — panel styles
+   ============================================================ */
+
+/* ---------- Open button in file headers ---------- */
+
+.mdr-open-slot {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.mdr-open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #0969da;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mdr-open-btn:hover {
+  background: #ddf4ff;
+  border-color: #54aeff;
+}
+
+/* ---------- Global entry pill ---------- */
+
+.mdr-global-btn {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 99990;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 2px solid #0d419d;
+  border-radius: 999px;
+  background: #1f6feb;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(31, 111, 235, 0.35);
+}
+
+.mdr-global-btn:hover {
+  background: #388bfd;
+}
+
+/* ---------- Docs review tab ---------- */
+
+.mdr-tab {
+  cursor: pointer;
+}
+
+/* ---------- File sections ---------- */
+
+.mdr-file-section {
+  margin-bottom: 56px;
+}
+
+.mdr-file-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #d0d7de;
+}
+
+.mdr-file-heading__icon {
+  display: inline-flex;
+  color: #57606a;
+}
+
+.mdr-file-heading__path {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2328;
+  word-break: break-all;
+}
+
+.mdr-file-heading__count {
+  font-size: 12px;
+  color: #57606a;
+  flex-shrink: 0;
+}
+
+.mdr-section-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* ---------- Empty state ---------- */
+
+.mdr-empty {
+  padding: 64px 24px;
+  text-align: center;
+  font-size: 15px;
+  color: #57606a;
+}
+
+[data-color-mode="dark"] .mdr-file-heading {
+  border-bottom-color: #30363d;
+}
+
+[data-color-mode="dark"] .mdr-file-heading__path {
+  color: #e6edf3;
+}
+
+[data-color-mode="dark"] .mdr-file-heading__icon,
+[data-color-mode="dark"] .mdr-file-heading__count,
+[data-color-mode="dark"] .mdr-empty {
+  color: #8b949e;
+}
+
+/* ---------- Overlay layout ---------- */
+
+.mdr-no-scroll {
+  overflow: hidden !important;
+}
+
+.mdr-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  background: #f6f8fa;
+}
+
+.mdr-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #d0d7de;
+  flex-shrink: 0;
+}
+
+.mdr-header__icon {
+  display: inline-flex;
+  color: #57606a;
+}
+
+.mdr-header__filepos {
+  font-size: 12px;
+  font-weight: 600;
+  color: #57606a;
+  font-variant-numeric: tabular-nums;
+  min-width: 36px;
+  text-align: center;
+}
+
+.mdr-header__path {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2328;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 55vw;
+}
+
+[data-color-mode="dark"] .mdr-header__filepos {
+  color: #8b949e;
+}
+
+.mdr-header__status {
+  font-size: 12px;
+  color: #57606a;
+}
+
+.mdr-header__spacer {
+  flex: 1;
+}
+
+.mdr-scroll {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.mdr-content {
+  position: relative;
+  padding: 32px 24px 160px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mdr-doc-col {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 40px 48px;
+  box-shadow: 0 1px 3px rgba(31, 35, 40, 0.08);
+}
+
+.mdr-rail {
+  position: relative;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.mdr-loading,
+.mdr-error {
+  padding: 24px;
+  font-size: 14px;
+  color: #57606a;
+}
+
+.mdr-error {
+  color: #cf222e;
+}
+
+/* ---------- Document blocks ---------- */
+
+.mdr-doc [data-mdr-line] {
+  position: relative;
+  border-radius: 4px;
+  transition: background 0.15s;
+  scroll-margin-top: 80px;
+}
+
+.mdr-doc [data-mdr-line]:hover {
+  background: #f0f6ff;
+  cursor: pointer;
+}
+
+/* Source line number on hover */
+.mdr-doc [data-mdr-line]:hover::before {
+  content: attr(data-mdr-line);
+  position: absolute;
+  left: -44px;
+  top: 0.25em;
+  width: 36px;
+  text-align: right;
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #8b949e;
+  cursor: default;
+}
+
+.mdr-doc .mdr-changed {
+  box-shadow: -12px 0 0 -9px #2da44e;
+}
+
+.mdr-doc .mdr-has-threads {
+  box-shadow: -12px 0 0 -9px #54aeff;
+}
+
+.mdr-doc .mdr-changed.mdr-has-threads {
+  box-shadow: -12px 0 0 -9px #54aeff, -18px 0 0 -15px #2da44e;
+}
+
+.mdr-doc .mdr-highlight {
+  background: #fff8c5 !important;
+}
+
+/* ---------- Rail cards ---------- */
+
+.mdr-card {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 1px 3px rgba(31, 35, 40, 0.08);
+  font-size: 13px;
+}
+
+.mdr-card__chip {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 1px 8px;
+  border: 1px solid #d0d7de;
+  border-radius: 999px;
+  background: #f6f8fa;
+  color: #57606a;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mdr-card__chip:hover {
+  background: #ddf4ff;
+  color: #0969da;
+  border-color: #54aeff;
+}
+
+.mdr-card__fallback {
+  font-size: 12px;
+  color: #57606a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mdr-card__add {
+  margin-top: 6px;
+}
+
+/* ---------- Threads ---------- */
+
+.mdr-thread {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.mdr-thread--resolved {
+  opacity: 0.8;
+}
+
+.mdr-thread__summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: #f6f8fa;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.mdr-thread__summary:hover {
+  background: #eaeef2;
+}
+
+.mdr-thread__author {
+  font-weight: 600;
+  color: #1f2328;
+}
+
+.mdr-thread__meta {
+  color: #57606a;
+  font-size: 11px;
+}
+
+.mdr-comment {
+  padding: 8px 10px;
+  border-top: 1px solid #d0d7de;
+}
+
+.mdr-comment__head {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.mdr-comment__author {
+  font-weight: 600;
+  color: #1f2328;
+}
+
+.mdr-comment__time {
+  color: #57606a;
+  font-size: 11px;
+}
+
+.mdr-comment__delete {
+  margin-left: auto;
+  font-size: 11px;
+  padding: 1px 8px;
+}
+
+.mdr-avatar {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Matches GitHub's attention Label (orange "Pending" pill) */
+.mdr-pending-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 7px;
+  height: 18px;
+  border: 1px solid #d4a72c;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #9a6700;
+  white-space: nowrap;
+}
+
+.mdr-pending-badge svg {
+  color: #bf8700;
+}
+
+[data-color-mode="dark"] .mdr-pending-badge {
+  border-color: #9e6a03;
+  color: #d29922;
+}
+
+[data-color-mode="dark"] .mdr-pending-badge svg {
+  color: #d29922;
+}
+
+.mdr-comment__body {
+  font-size: 13px;
+}
+
+.mdr-comment__body.markdown-body {
+  background: transparent;
+}
+
+.mdr-thread__footer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 6px 10px;
+  border-top: 1px solid #d0d7de;
+  background: #f6f8fa;
+}
+
+.mdr-thread__status {
+  font-size: 11px;
+  color: #57606a;
+}
+
+.mdr-reply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 10px;
+  border-top: 1px solid #d0d7de;
+}
+
+/* ---------- Composer ---------- */
+
+.mdr-composer {
+  border-color: #0969da;
+  box-shadow: 0 4px 12px rgba(9, 105, 218, 0.15);
+}
+
+.mdr-composer__title {
+  font-weight: 600;
+  font-size: 12px;
+  color: #1f2328;
+  margin-bottom: 6px;
+}
+
+.mdr-composer__status {
+  min-height: 14px;
+  margin: 4px 0;
+  font-size: 12px;
+  color: #57606a;
+}
+
+/* ---------- Shared controls ---------- */
+
+.mdr-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1f2328;
+  font-size: 13px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  resize: vertical;
+}
+
+.mdr-input:focus {
+  outline: 2px solid #0969da;
+  outline-offset: -1px;
+}
+
+.mdr-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.mdr-btn {
+  padding: 4px 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1f2328;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mdr-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.mdr-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.mdr-btn--primary {
+  background: #1f883d;
+  border-color: #1f883d;
+  color: #ffffff;
+}
+
+.mdr-btn--primary:hover:not(:disabled) {
+  background: #1a7f37;
+}
+
+.mdr-btn--quiet {
+  background: transparent;
+  border-color: transparent;
+  color: #cf222e;
+}
+
+.mdr-btn--quiet:hover:not(:disabled) {
+  background: #ffebe9;
+}
+
+/* ---------- Selection toolbar ---------- */
+
+.mdr-toolbar {
+  position: fixed;
+  z-index: 100001;
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(31, 35, 40, 0.2);
+}
+
+/* ---------- Dark mode ---------- */
+
+[data-color-mode="dark"] .mdr-open-btn { background: #161b22; border-color: #30363d; color: #58a6ff; }
+[data-color-mode="dark"] .mdr-open-btn:hover { background: #0c2d6b; border-color: #1f6feb; }
+
+[data-color-mode="dark"] .mdr-overlay { background: #010409; }
+[data-color-mode="dark"] .mdr-header { background: #0d1117; border-bottom-color: #30363d; }
+[data-color-mode="dark"] .mdr-header__path { color: #e6edf3; }
+[data-color-mode="dark"] .mdr-header__status { color: #8b949e; }
+
+[data-color-mode="dark"] .mdr-doc-col {
+  background: #0d1117;
+  border-color: #30363d;
+  box-shadow: none;
+}
+
+[data-color-mode="dark"] .mdr-doc [data-mdr-line]:hover { background: #161b22; }
+[data-color-mode="dark"] .mdr-doc .mdr-highlight { background: #3a2d12 !important; }
+
+[data-color-mode="dark"] .mdr-card,
+[data-color-mode="dark"] .mdr-thread,
+[data-color-mode="dark"] .mdr-toolbar {
+  background: #0d1117;
+  border-color: #30363d;
+}
+
+[data-color-mode="dark"] .mdr-card__chip,
+[data-color-mode="dark"] .mdr-thread__summary,
+[data-color-mode="dark"] .mdr-thread__footer {
+  background: #161b22;
+  border-color: #30363d;
+  color: #8b949e;
+}
+
+[data-color-mode="dark"] .mdr-thread__summary:hover { background: #21262d; }
+[data-color-mode="dark"] .mdr-thread__author,
+[data-color-mode="dark"] .mdr-comment__author,
+[data-color-mode="dark"] .mdr-composer__title { color: #e6edf3; }
+[data-color-mode="dark"] .mdr-thread__meta,
+[data-color-mode="dark"] .mdr-comment__time,
+[data-color-mode="dark"] .mdr-thread__status,
+[data-color-mode="dark"] .mdr-composer__status,
+[data-color-mode="dark"] .mdr-card__fallback { color: #8b949e; }
+
+[data-color-mode="dark"] .mdr-comment,
+[data-color-mode="dark"] .mdr-reply-form { border-top-color: #30363d; }
+
+[data-color-mode="dark"] .mdr-input {
+  background: #010409;
+  border-color: #30363d;
+  color: #e6edf3;
+}
+
+[data-color-mode="dark"] .mdr-btn {
+  background: #21262d;
+  border-color: #30363d;
+  color: #e6edf3;
+}
+
+[data-color-mode="dark"] .mdr-btn:hover:not(:disabled) { background: #30363d; }
+[data-color-mode="dark"] .mdr-btn--primary { background: #238636; border-color: #238636; color: #ffffff; }
+[data-color-mode="dark"] .mdr-btn--quiet { background: transparent; border-color: transparent; color: #f85149; }
+[data-color-mode="dark"] .mdr-btn--quiet:hover:not(:disabled) { background: #67060c33; }
